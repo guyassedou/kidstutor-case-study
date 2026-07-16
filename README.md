@@ -1,149 +1,51 @@
-# KidsTutor — A Closed-Source Product Case Study
+# KidsTutor
 
-KidsTutor is a proprietary Hebrew/English mathematics-learning product for children across multiple grade levels. This repository documents the product decisions, AI-native operating model, and verification discipline behind the work.
+## A closed-source product leadership case study
 
-It intentionally contains **no production source code**, private Git history, real child data, database design, curriculum generators, proprietary algorithms, production configuration, or commercial roadmap.
+KidsTutor is a proprietary Hebrew/English mathematics-learning product for children across multiple grade levels. This repository is a portfolio case study about the product judgment, operating model, and leadership behind it—not a distribution of the product itself.
 
-## The product challenge
+The case study shows how I move from an ambiguous problem to a coherent product direction, translate feedback into decisions, and use AI-native delivery methods to produce a real working prototype while retaining human ownership of strategy, quality, and accountability.
 
-Learning software for children has to succeed on several dimensions at once:
+## The product leadership lens
 
-- The educational content must be correct and age appropriate.
-- The interface must work across desktop, tablet, and touch-first devices.
-- Hebrew introduces vocalization, speech, and bidirectional-layout concerns.
-- Feedback must help a child recover from mistakes without interrupting momentum.
-- Motivation systems must encourage practice without taking over the learning experience.
-- Parents need useful progress signals without turning the child's experience into an analytics dashboard.
+I approached KidsTutor as a product owner and fractional-CPO-style engagement:
 
-KidsTutor became a working environment for making and validating those tradeoffs rather than treating them as isolated features.
+- Frame the user and business problem before defining features.
+- Establish experience principles for children, parents, localization, and touch-first use.
+- Turn fragmented feedback into a prioritized, traceable product agenda.
+- Make explicit tradeoffs across learning value, usability, motivation, technical risk, and speed.
+- Build operating mechanisms that allow AI-assisted delivery without surrendering product judgment.
+- Set a verification standard strong enough to distinguish a functioning product from a convincing demo.
 
-## What was built
+## Strategic themes
 
-The private product includes:
+### Child-centred experience
 
-- Localized mathematics practice
-- Grade-specific question experiences
-- Worked feedback and explanations
-- Hebrew vocalization support
-- Touch-friendly scratch work
-- Progress, achievements, ranks, and personalization
-- Parent-facing progress reporting
-- Sharing and celebration experiences
-- Supporting simulation, generation, and verification tools
+The product treats age, language, device, feedback, and motivation as connected parts of the learning experience. Hebrew literacy, touch interaction, and recovery from mistakes are product-design concerns rather than implementation details.
 
-The implementation remains proprietary. This case study focuses on how the product was directed and operated.
+### Systems over isolated features
 
-## Selected product decisions
+Progress, rewards, personalization, parent visibility, content quality, and learning interactions were considered as one product system. This made tradeoffs more deliberate and future changes safer.
 
-### 1. Treat touch interaction as a different product environment
+### AI-native execution with human accountability
 
-A child using a tablet does not experience focus, keyboards, scrolling, or scratch work the way a desktop user does. The product evolved away from automatic keyboard behavior and toward explicit, child-controlled interaction. Scratch work was designed as part of the question flow rather than as a detached utility.
+AI accelerated research, implementation, analysis, and verification. Product direction, prioritization, approval, and accountability remained human-led. The resulting operating model is designed for speed without losing traceability or decision quality.
 
-### 2. Make Hebrew legible to learners, not merely correct to adults
+## Evidence of execution
 
-Unvocalized Hebrew can be difficult for children to sound out and can produce unreliable text-to-speech pronunciation. Vocalization was added across learning content and checked through independent tools plus deterministic letter-level validation. The verification workflow became reusable so later content would not depend on memory or manual inspection alone.
+KidsTutor exists as a working product prototype supported by repeatable build, test, content-checking, and delivery workflows. The evidence demonstrates the ability to carry a product thesis through to a functioning system; it is not presented as evidence of market adoption or educational outcomes.
 
-### 3. Convert feedback into traceable product work
-
-Feedback was mapped into a canonical workplan rather than scattered across conversations and notes. Each meaningful change connected an observation to a decision, implementation, and verification step. Raw feedback and identifying information remain private.
-
-### 4. Treat the motivation economy as a system
-
-Ranks, experience points, rewards, and shop items were centralized into a coherent policy and mechanism. The goal was not simply cleaner code: it was to make future product tuning safer, comparable, and testable without silent drift between duplicated rules.
-
-### 5. Separate the child and parent experiences
-
-Parent reporting should answer progress questions without adding administrative weight to the child's learning flow. Early reporting work was therefore developed as a separate operational capability before being considered as product UI.
-
-## An AI-native operating model
-
-AI coding agents accelerated implementation, but product ownership remained human-led.
-
-```mermaid
-flowchart TD
-    A[Feedback or product goal] --> B[Owner framing and scope]
-    B --> C[Architecture or workplan]
-    C --> D[AI-assisted implementation]
-    D --> E[Build, tests, and focused verification]
-    E --> F[Owner review and release decision]
-    F --> G[Repository handoff and updated context]
-    G --> A
-```
-
-The operating model used:
-
-- Persistent repository context across AI tools
-- Explicit cross-tool handoffs
-- One canonical workplan
-- Decision and architecture documents
-- Owner-approval gates
-- Small, revertible changes
-- Build and test verification before completion claims
-- Reusable scripts and skills for repeated workflows
-
-AI was the implementation layer. Product direction, tradeoffs, approval, and accountability remained with the owner.
-
-## Evidence snapshot
-
-At the audited July 12, 2026 project snapshot:
-
-- The TypeScript production build completed successfully.
-- The unit suite reported 209 passing tests across 16 test files.
-- Economy policy and catalog data had been centralized with parity checks against prior behavior.
-- Mobile, localization, content-verification, reporting, and asset-generation workflows were represented in the project history and documentation.
-
-These are dated repository-backed observations, not claims about educational outcomes.
-
-## High-level architecture
-
-```mermaid
-flowchart LR
-    Child[Child experience] --> Practice[Practice and feedback]
-    Practice --> Progress[Progress and motivation]
-    Progress --> Parent[Parent-facing insights]
-
-    Product[Product decisions] --> Workplan[Canonical workplan]
-    Workplan --> Agents[AI-assisted implementation]
-    Agents --> Verify[Build, tests, and verification]
-    Verify --> Release[Owner release decision]
-```
-
-This diagram intentionally omits production schemas, endpoints, infrastructure details, algorithms, and security boundaries.
-
-## What remains proprietary
-
-The following are not disclosed:
-
-- Production source and Git history
-- Curriculum and question-generation logic
-- Scoring and answer-evaluation algorithms
-- Economy configuration and simulation internals
-- Database schemas and migrations
-- Authentication and account linking
-- Operational analysis and parent-report implementation
-- Agent prompts and complete internal instructions
-- Raw feedback and all child or parent data
-- Production configuration
-- Commercial roadmap and monetization mechanics
-
-## Repository purpose
-
-This is a documentation-only portfolio artifact. It demonstrates product thinking, operating design, and delivery evidence without licensing or distributing the underlying product.
-
-See:
+## Explore the case study
 
 - [Product thinking](docs/product-thinking.md)
+- [Decisions and tradeoffs](docs/decisions-and-tradeoffs.md)
 - [AI-native operating model](docs/ai-native-operating-model.md)
 - [Architecture overview](docs/architecture-overview.md)
-- [Decisions and tradeoffs](docs/decisions-and-tradeoffs.md)
 - [Privacy and disclosure boundary](docs/privacy-and-synthetic-data.md)
-- [Media capture plan](media/SHOT-LIST.md)
 
-## Status
+## Proprietary boundary
 
-KidsTutor remains a closed-source product under development. This repository is not the application, an SDK, a distribution, or an offer of source-code access.
+The underlying product remains closed-source. This repository contains no production source code, private Git history, real child or parent data, secrets, production configuration, proprietary algorithms, detailed schemas, internal prompts, or commercial roadmap.
 
-## Rights
-
-Copyright © Guy Assedou. All rights reserved. See [LICENSE.md](LICENSE.md).
+Copyright © 2026 Guy Assedou. All rights reserved. See [LICENSE.md](LICENSE.md).
 
